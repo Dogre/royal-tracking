@@ -1,0 +1,67 @@
+// Royal Mania App
+Media/ManiaApps/Nadeo/Trackmania/Modes/Royal.Script.txt
+// Royal Mania App UIModules
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/RoundEliminations_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/WaitingScreen_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/ScoresTable_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/TeamScore_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/PreLoadingScreen_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/MatchResult_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/SegmentComplete_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/SegmentProgression_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/Countdown_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/SpectatorInfo_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/LiveRanking_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/RoundBestTeams_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/WinScreen_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/CanChat_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/UIModules/EliminationWarning_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/Transition_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/RespawnHelper_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/FinishFeed_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/BonusTime_Client.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/Markers_Client.Script.txt
+// Base Mode + Royal mode 
+Modes/Nadeo/Trackmania/Base/TrackmaniaBase.Script.txt
+Modes/TrackMania/TM_Royal_Online.Script.txt
+// Royal mode includes
+Libs/Nadeo/CMGame/Utils/Task.Script.txt
+Libs/Nadeo/Trackmania/Modes/Matchmaking.Script.txt
+Libs/Nadeo/CMGame/Modes/Bot.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/Royal.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/StateManager.Script.txt
+Libs/Nadeo/TMGame/Modes/Base/UIModules/PauseMenuOnline_Server.Script.txt
+Libs/Nadeo/TMGame/Modes/Base/UIModules/Checkpoint_Server.Script.txt
+Libs/Nadeo/TMGame/Modes/Base/UIModules/SpectatorBase_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/RoundEliminations_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/RoundBestTeams_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/ScoresTable_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/TeamScore_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/WaitingScreen_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/PreLoadingScreen_Common.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/MatchResult_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/SegmentProgression_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/LiveRanking_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/WinScreen_Common.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/Transition_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/CanChat_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/SuperRoyal_Server.Script.txt
+Libs/Nadeo/Trackmania/Structures/PrestigeStruct.Script.txt
+// Royal Helper lib includes
+Libs/Nadeo/CMGame/Utils/Log.Script.txt
+Libs/Nadeo/TMGame/Modes/Race.Script.txt
+Libs/Nadeo/TMGame/Modes/Scores.Script.txt
+Libs/Nadeo/TMGame/Modes/Map.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/Constants.Script.txt
+Libs/Nadeo/TMGame/Utils/Tracking.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/SegmentProgression_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/TeamScore_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/SegmentComplete_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/FinishFeed_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/UIModules/EliminationWarning_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/UIModules/Countdown_Server.Script.txt
+Libs/Nadeo/Trackmania/Modes/Royal/Ranking_Server.Script.txt
+// Clans
+Libs/Nadeo/CMGame/Modes/Clans_Common.Script.txt
+Libs/Nadeo/CMGame/Modes/Clans_Server.Script.txt
+Libs/Nadeo/CMGame/Modes/Clans_Client.Script.txt
