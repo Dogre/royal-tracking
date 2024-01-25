@@ -1,0 +1,68 @@
+/**
+ *	Royal UI
+ */
+#Extends "ManiaApps/Nadeo/Trackmania/Modes/TrackmaniaBase.Script.txt"
+
+#Const Version		"1.0.0"
+#Const ScriptName	"ManiaApps/Nadeo/Trackmania/Modes/Royal.Script.txt"
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+// Libraries
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/RoundEliminations_Client.Script.txt" as UIModules_RoundEliminations
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/WaitingScreen_Client.Script.txt" as UIModules_WaitingScreen
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/ScoresTable_Client.Script.txt" as UIModules_ScoresTableRoyal
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/TeamScore_Client.Script.txt" as UIModules_TeamScore
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/PreLoadingScreen_Client.Script.txt" as UIModules_PreLoadingScreen
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/MatchResult_Client.Script.txt" as UIModules_MatchResult
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/SegmentComplete_Client.Script.txt" as UIModules_SegmentComplete
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/SegmentProgression_Client.Script.txt" as UIModules_SegmentProgression
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/Countdown_Client.Script.txt" as UIModules_Countdown
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/SpectatorInfo_Client.Script.txt" as UIModules_SpectatorInfo
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/LiveRanking_Client.Script.txt" as UIModules_LiveRanking
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/RoundBestTeams_Client.Script.txt" as UIModules_RoundBestTeams
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/WinScreen_Client.Script.txt" as UIModules_WinScreen
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/CanChat_Client.Script.txt" as UIModules_CanChat
+#Include "Libs/Nadeo/Trackmania/Modes/UIModules/EliminationWarning_Client.Script.txt" as UIModules_EliminationWarning
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/Transition_Client.Script.txt" as UIModules_Transition
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/RespawnHelper_Client.Script.txt" as UIModules_RespawnHelper
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/FinishFeed_Client.Script.txt" as UIModules_FinishFeed
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/BonusTime_Client.Script.txt" as UIModules_BonusTime
+#Include "Libs/Nadeo/Trackmania/Modes/Royal/Markers_Client.Script.txt" as RoyalMarkers
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+// Extends
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+***StartApp***
+***
+VoiceChat.SyncMode = CVoiceChatConfig::ESyncMode::Clan;
+Tracking::SetGameMode(TrackingMgr, System, Tracking::C_GameMode_Royal, Map);
+UIModules::CreateModule(UIModules_RoundEliminations::GetId(), UIModules_RoundEliminations::GetML(), UIModules_RoundEliminations::GetLayerType());
+UIModules::CreateModule(UIModules_WaitingScreen::GetId(), UIModules_WaitingScreen::GetML(), UIModules_WaitingScreen::GetLayerType());
+UIModules::CreateModule(UIModules_ScoresTableRoyal::GetId(), UIModules_ScoresTableRoyal::GetML(), UIModules_ScoresTableRoyal::GetLayerType());
+UIModules::CreateModule(UIModules_TeamScore::GetId(), UIModules_TeamScore::GetML(), UIModules_TeamScore::GetLayerType());
+UIModules::CreateModule(UIModules_PreLoadingScreen::GetId(), UIModules_PreLoadingScreen::GetML(), UIModules_PreLoadingScreen::GetLayerType());
+UIModules::CreateModule(UIModules_MatchResult::GetId(), UIModules_MatchResult::GetML(), UIModules_MatchResult::GetLayerType());
+UIModules::CreateModule(UIModules_SegmentComplete::GetId(), UIModules_SegmentComplete::GetML(), UIModules_SegmentComplete::GetLayerType());
+UIModules::CreateModule(UIModules_SegmentProgression::GetId(), UIModules_SegmentProgression::GetML(), UIModules_SegmentProgression::GetLayerType());
+UIModules::CreateModule(UIModules_Countdown::GetId(), UIModules_Countdown::GetML(), UIModules_Countdown::GetLayerType());
+UIModules::CreateModule(UIModules_SpectatorInfo::GetId(), UIModules_SpectatorInfo::GetML(), UIModules_SpectatorInfo::GetLayerType());
+UIModules::CreateModule(UIModules_LiveRanking::GetId(), UIModules_LiveRanking::GetML(), UIModules_LiveRanking::GetLayerType());
+UIModules::CreateModule(UIModules_RoundBestTeams::GetId(), UIModules_RoundBestTeams::GetML(), UIModules_RoundBestTeams::GetLayerType());
+UIModules::CreateModule(UIModules_WinScreen::GetId(), UIModules_WinScreen::GetML(), UIModules_WinScreen::GetLayerType());
+UIModules::CreateModule(UIModules_EliminationWarning::GetId(), UIModules_EliminationWarning::GetML(), UIModules_EliminationWarning::GetLayerType());
+UIModules::CreateModule(UIModules_Transition::GetId(), UIModules_Transition::GetML(), UIModules_Transition::GetLayerType());
+UIModules::CreateModule(UIModules_RespawnHelper::GetId(), UIModules_RespawnHelper::GetML(), UIModules_RespawnHelper::GetLayerType());
+UIModules::CreateModule(UIModules_FinishFeed::GetId(), UIModules_FinishFeed::GetML(), UIModules_FinishFeed::GetLayerType());
+UIModules::CreateModule(UIModules_BonusTime::GetId(), UIModules_BonusTime::GetML(), UIModules_BonusTime::GetLayerType());
+UIModules::CreateModule(UIModules_CanChat::GetId(), UIModules_CanChat::GetML(), UIModules_CanChat::GetLayerType());
+
+Markers::AddPlayerMarkerComponent(RoyalMarkers::C_Name, RoyalMarkers::Component());
+***
+
+/*
+***AppLoop***
+***
+
+***
+*/
