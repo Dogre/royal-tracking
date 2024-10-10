@@ -5,7 +5,7 @@
 #Const ScriptName	"Libs/Nadeo/Trackmania/Modes/Royal/Markers_Client.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "Libs/Nadeo/CMGame/Utils/ManiaView2.Script.txt" as MV
 #Include "Libs/Nadeo/CMGame/Components/PlayerName.Script.txt" as PlayerName
@@ -16,14 +16,14 @@
 #Const P "RoyalMarker_" //< Prefix use to differentiate functions/variables in the script
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constants
+// MARK: Constants
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const C_PlayerNameMaxWidth 30.
 #Const C_AllMarkersDisplayDuration 150
 #Const C_ImgMarkerPath "file://Media/Manialinks/Nadeo/Trackmania/Modes/Royal"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /** Get the module manialink

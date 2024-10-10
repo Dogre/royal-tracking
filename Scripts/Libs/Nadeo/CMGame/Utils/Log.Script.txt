@@ -5,13 +5,13 @@
 #Const ScriptName	"Libs/Nadeo/CMGame/Utils/Log.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "TextLib" as TL
 #Include "Libs/Nadeo/CMGame/Utils/Env.Script.txt" as Env
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constants
+// MARK: Constants
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const C_CustomLogMessagesMax 47
 #Const C_ZIndex 1000
@@ -21,7 +21,7 @@
 #Const C_Level_Error 2
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Globales
+// MARK: Globales
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 declare Text[] G_ScriptsNames; ///< Array containing the registered scripts names
 declare Text[] G_ScriptsVersions; ///< Array containing the registered scripts versions
@@ -30,10 +30,10 @@ declare Ident G_CustomLogLayerId_CManiaApp;
 declare Ident G_CustomLogLayerId_CUIConfigMgr;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Public
+// MARK: Public
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /// Get the `System` of a nod if it exists

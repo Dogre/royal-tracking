@@ -5,16 +5,16 @@
 #Const ScriptName	"Libs/Nadeo/Trackmania/Modes/Royal/UIModules/SegmentProgression_Server.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Includes
+// MARK: Includes
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "Libs/Nadeo/CMGame/Modes/UIModules_Common.Script.txt" as UIModules_Common
 #Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/SegmentProgression_Common.Script.txt" as UIModules_SegmentProgression_Common
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Public
+// MARK: Public
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /// Get the id of the UI module

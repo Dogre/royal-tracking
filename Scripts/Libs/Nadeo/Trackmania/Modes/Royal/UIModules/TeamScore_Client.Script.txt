@@ -5,7 +5,7 @@
 #Const ScriptName	"Libs/Nadeo/Trackmania/Modes/Royal/UIModules/TeamScore_Client.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "Libs/Nadeo/CMGame/Utils/ManiaView2.Script.txt" as MV
 #Include "Libs/Nadeo/CMGame/Utils/MLHelpers.Script.txt" as MLHelpers
@@ -20,7 +20,7 @@
 #Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/ZIndex.Script.txt" as ZIndex
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constants
+// MARK: Constants
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const C_Img_PointsBackground "file://Media/Manialinks/Nadeo/Trackmania/Modes/Royal/hud_royal_ingame_team_points_bg.dds"
 #Const C_Img_MVP "file://Media/Manialinks/Nadeo/Trackmania/Modes/Matchmaking/icons_128_settings_top_inc.dds"
@@ -38,10 +38,10 @@
 #Const C_Column_BonusTimeValue 7
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Public
+// MARK: Public
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /// Get the id of the UI module

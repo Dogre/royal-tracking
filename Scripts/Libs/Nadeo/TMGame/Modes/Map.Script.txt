@@ -1,16 +1,16 @@
 /**
  *	Map for race mode
  */
-#Const Version		"1.0.0"
+#Const Version		"1.1.0"
 #Const ScriptName	"Libs/Nadeo/TMGame/Modes/Map.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "Libs/Nadeo/TMGame/Modes/Landmark.Script.txt" as Landmark
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Structures
+// MARK: Structures
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Struct K_LibRace_MapInfo {
 	CMapLandmark[] Starts;
@@ -24,12 +24,12 @@
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Globales
+// MARK: Globales
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 declare K_LibRace_MapInfo G_MapInfo;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /** Get an empty map info struct
@@ -157,11 +157,13 @@ CMapLandmark[] GetStarts() {
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-/** Get the the number of checkpoints
- *	in the map
- *
- *	@return														The number of checkpoints in the map
- */
+/// Get the number of starts in the map
+Integer GetStartsCount() {
+	return G_MapInfo.Starts.count + G_MapInfo.Multilaps.count;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+/// Get the number of checkpoints in the map
 Integer GetCheckpointsCount() {
 	return G_MapInfo.Checkpoints.count + G_MapInfo.LinkedCheckpoints.count;
 }

@@ -1,14 +1,15 @@
 /**
  *	Royal mode helper library
  */
-#Const Version		"1.0.1"
+#Const Version		"1.0.2"
 #Const ScriptName	"Libs/Nadeo/Trackmania/Modes/Royal/Royal.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "TextLib" as TL
 #Include "MathLib" as ML
+#Include "Libs/Nadeo/CMGame/Modes/Clans_Server.Script.txt" as Clans
 #Include "Libs/Nadeo/CMGame/Utils/Log.Script.txt" as Log
 #Include "Libs/Nadeo/TMGame/Modes/Race.Script.txt" as Race
 #Include "Libs/Nadeo/TMGame/Modes/Scores.Script.txt" as Scores
@@ -24,7 +25,7 @@
 #Include "Libs/Nadeo/Trackmania/Modes/Royal/Ranking_Server.Script.txt" as Ranking
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Structures
+// MARK: Structures
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Struct K_Member {
 	Text AccountId;
@@ -56,7 +57,7 @@
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constants
+// MARK: Constants
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const C_TeamNullId 0
 #Const C_TeamNull K_Team { Id = 0 }
@@ -80,7 +81,7 @@
 #Const C_OutroWithoutScoresTableDuration 750
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Globales
+// MARK: Globales
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 declare Integer[Text] G_AccountIdToTeamId;
 declare K_Team[Integer] G_Teams;
@@ -93,7 +94,7 @@ declare Integer G_UnlockedSegmentIndex; //< Starts at 0 for white segment
 declare Boolean G_PlayersRankingDirty;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // Create a new team if it does not exist yet
@@ -274,7 +275,7 @@ Void UpdateDossard(CSmPlayer _Player, Integer _Rank) {
 	if (G_EliminationRank > 0 && _Rank >= G_EliminationRank) {
 		_Player.Dossard_Color = <0.7, 0., 0.>;
 	} else {
-		_Player.Dossard_Color = Race::C_DossardColor_Default;
+		_Player.Dossard_Color = Clans::GetClanTrigramColor(_Player.CurrentClan);
 	}
 }
 

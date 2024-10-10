@@ -7,7 +7,7 @@
 #Const ScriptName	"ManiaApps/Nadeo/Trackmania/Modes/Royal.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/RoundEliminations_Client.Script.txt" as UIModules_RoundEliminations
 #Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/WaitingScreen_Client.Script.txt" as UIModules_WaitingScreen
@@ -31,7 +31,7 @@
 #Include "Libs/Nadeo/Trackmania/Modes/Royal/Markers_Client.Script.txt" as RoyalMarkers
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Extends
+// MARK: Extends
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 ***StartApp***
 ***

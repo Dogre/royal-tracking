@@ -10,12 +10,12 @@
 #Const C_PB_ScriptName	"Modes/Nadeo/Trackmania/Base/TrackmaniaBase.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "Libs/Nadeo/Trackmania/Modes/TrackmaniaCommon.Script.txt" as TrackmaniaCommon
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Extends
+// MARK: Extends
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 ***MB_Private_LogVersions***
 ***

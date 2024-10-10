@@ -1,11 +1,11 @@
 /**
  *	Matchmaking related code
  */
-#Const Version		"2.0.0"
+#Const Version		"2.0.1"
 #Const ScriptName	"Libs/Nadeo/Trackmania/Modes/Matchmaking.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "TextLib" as TL
 #Include "Libs/Nadeo/CMGame/Modes/Legacy/XmlRpc2.Script.txt" as XmlRpc
@@ -17,7 +17,7 @@
 #Include "Libs/Nadeo/CMGame/Utils/Config.Script.txt" as Config
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Structure
+// MARK: Structure
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Struct K_Method_AddPlayer {
 	Text AccountId;
@@ -42,7 +42,7 @@
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constants
+// MARK: Constants
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const C_Method_AddPlayer "Club.Match.AddPlayer"
 #Const C_Method_RemovePlayer "Club.Match.RemovePlayer"
@@ -76,7 +76,7 @@
 #Const C_RequestRetry_GetMatchParticipants 15
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /// Get the account id and clan of the player added to the match
@@ -144,7 +144,7 @@ Void Private_CleanupPreviousMatch(K_Match _Match) {
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /// Create a new matchmaking match
 K_Match NewMatch(K_Match _PreviousMatch, Text _MatchmakingId, Text _MatchId, Boolean _IsDebug) {
-	assert(ServerAuth::IsServiceActive(ServerAuth::C_Services_Club), "You must initialize `ServerAuth::C_Services_Club` in the `ServerAuth` library to be able to make requests to the matchmaking API from a server.");
+	assert(ServerAuth::IsServiceActive(ServerAuth::C_Services_Live), "You must initialize `ServerAuth::C_Services_Live` in the `ServerAuth` library to be able to make requests to the matchmaking API from a server.");
 
 	Private_CleanupPreviousMatch(_PreviousMatch);
 

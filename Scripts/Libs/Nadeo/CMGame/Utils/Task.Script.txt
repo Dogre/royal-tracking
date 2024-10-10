@@ -7,7 +7,7 @@
 #Include "Libs/Nadeo/CMGame/Utils/Error.Script.txt" as Error
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Structures
+// MARK: Structures
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Struct K_TaskOwner {
 	Integer Type;
@@ -47,7 +47,7 @@
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constants
+// MARK: Constants
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const C_Owner_Null 0
 #Const C_Owner_DataFileMgr 1
@@ -68,7 +68,7 @@
 #Const C_UbiServicesErrorType "UbiServices"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /// Get an empty task (useful to initialize variables)

@@ -5,7 +5,7 @@
 #Const ScriptName	"Libs/Nadeo/Trackmania/Modes/Royal/UIModules/SpectatorInfo_Client.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "Libs/Nadeo/CMGame/Utils/ManiaView2.Script.txt" as MV
 #Include "Libs/Nadeo/CMGame/Utils/MLHelpers.Script.txt" as MLHelpers
@@ -21,17 +21,17 @@
 #Include "Libs/Nadeo/Trackmania/Modes/Royal/SuperRoyal_Client.Script.txt" as SuperRoyal
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constants
+// MARK: Constants
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const C_ImgPath "file://Media/Manialinks/Nadeo/Trackmania/Modes/Royal"
 #Const UIModules_SpectatorInfo_Common::C_UIModuleConfig as C_UIModuleConfig
 #Const C_Class_Interactive "interactive"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Public
+// MARK: Public
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /// Get the id of the UI module

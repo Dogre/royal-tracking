@@ -5,22 +5,22 @@
 #Const ScriptName	"Libs/Nadeo/Trackmania/Modes/UIModules/EliminationWarning_Server.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Includes
+// MARK: Includes
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "Libs/Nadeo/CMGame/Modes/UIModules_Common.Script.txt" as UIModules_Common
 #Include "Libs/Nadeo/Trackmania/Modes/UIModules/EliminationWarning_Common.Script.txt" as UIModules_EliminationWarning_Common
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constants
+// MARK: Constants
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const UIModules_EliminationWarning_Common::C_GameMode_Knockout as C_GameMode_Knockout
 #Const UIModules_EliminationWarning_Common::C_GameMode_Royal as C_GameMode_Royal
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Public
+// MARK: Public
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /// Get the id of the UI module

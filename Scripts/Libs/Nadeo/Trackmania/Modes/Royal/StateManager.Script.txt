@@ -1,16 +1,17 @@
 /**
  *	State manager for the Royal mode
  */
-#Const Version		"1.0.0"
+#Const Version		"1.1.0"
 #Const ScriptName	"Libs/Nadeo/Trackmania/Modes/Royal/StateManager.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "Libs/Nadeo/CMGame/Modes/UIModules_Server.Script.txt" as UIModules
 #Include "Libs/Nadeo/TMGame/Modes/Base/UIModules/RespawnHelper_Server.Script.txt" as UIModules_RespawnHelper_Default
 #Include "Libs/Nadeo/TMGame/Modes/Base/UIModules/TimeGap_Server.Script.txt" as UIModules_TimeGap_Default
 #Include "Libs/Nadeo/TMGame/Modes/Base/UIModules/Chrono_Server.Script.txt" as UIModules_Chrono_Default
+#Include "Libs/Nadeo/TMGame/Modes/Base/UIModules/LapsCounter_Server.Script.txt" as UIModules_LapsCounter_Default
 #Include "Libs/Nadeo/TMGame/Modes/Base/UIModules/ScoresTable_Server.Script.txt" as UIModules_ScoresTable_Default
 #Include "Libs/Nadeo/TMGame/Modes/Base/UIModules/Countdown_Server.Script.txt" as UIModules_Countdown_Default
 #Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/RoundEliminations_Server.Script.txt" as UIModules_RoundEliminations
@@ -35,7 +36,7 @@
 #Include "Libs/Nadeo/Trackmania/Modes/Royal/UIModules/BonusTime_Server.Script.txt" as UIModules_BonusTime
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constants
+// MARK: Constants
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /*	Enabling this setting will have
  *	a big impact on the script performances
@@ -63,12 +64,12 @@
 #Const C_State_BonusTime 9
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Globales
+// MARK: Globales
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 declare Integer[] G_ForcedStates;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /** Apply the given states to the given player
@@ -396,6 +397,7 @@ Void Load() {
 		UIModules_RespawnHelper_Default::GetId(),
 		UIModules_TimeGap_Default::GetId(),
 		UIModules_Chrono_Default::GetId(),
+		UIModules_LapsCounter_Default::GetId(),
 		UIModules_ScoresTable_Default::GetId(),
 		UIModules_Countdown_Default::GetId()
 	]);

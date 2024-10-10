@@ -1,33 +1,35 @@
 /**
  *  UI module: Checkpoint server side
  */
-#Const Version    "1.0.0"
+#Const Version    "1.1.0"
 #Const ScriptName "Libs/Nadeo/TMGame/Modes/Base/UIModules/Checkpoint_Server.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Includes
+// MARK: Includes
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "Libs/Nadeo/CMGame/Utils/Utils.Script.txt" as Utils
 #Include "Libs/Nadeo/CMGame/Modes/UIModules_Common.Script.txt" as UIModules_Common
 #Include "Libs/Nadeo/TMGame/Modes/Base/UIModules/Checkpoint_Common.Script.txt" as UIModules_Checkpoint_Common
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constants
+// MARK: Constants
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const UIModules_Checkpoint_Common::C_RankMode_BestRace as C_RankMode_BestRace
 #Const UIModules_Checkpoint_Common::C_RankMode_CurrentRace as C_RankMode_CurrentRace
 #Const UIModules_Checkpoint_Common::C_RankMode_Self as C_RankMode_Self
 #Const UIModules_Checkpoint_Common::C_RankMode_Ghost as C_RankMode_Ghost
+#Const UIModules_Checkpoint_Common::C_RankMode_GhostRespawns as C_RankMode_GhostRespawns
+#Const UIModules_Checkpoint_Common::C_RankMode_BestRespawns as C_RankMode_BestRespawns
 
 #Const UIModules_Checkpoint_Common::C_Target_Everyone as C_Target_Everyone
 #Const UIModules_Checkpoint_Common::C_Target_Players as C_Target_Players
 #Const UIModules_Checkpoint_Common::C_Target_None as C_Target_None
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Public
+// MARK: Public
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /// Get the id of the UI module
@@ -129,6 +131,14 @@ Void SetUseWaypointEvent(Boolean _UseWaypointEvent) {
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+/** Display the respawn number of the players instead of their time
+ */
+Void SetDisplayRespawnsInsteadOfTime(Boolean _DisplayRespawnsInsteadOfTime) {
+	declare netwrite Boolean Net_Race_Checkpoint_DisplayRespawnsInsteadOfTime for Teams[0] = False;
+	Net_Race_Checkpoint_DisplayRespawnsInsteadOfTime = _DisplayRespawnsInsteadOfTime;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /// The ghosts used to compute the player's rank at the checkpoint
 Void SetGhostsForRanking(CPlayer _Player, CGhost[] _Ghosts) {
 	declare CUIConfig UI <=> UIManager.GetUI(_Player);
@@ -138,6 +148,16 @@ Void SetGhostsForRanking(CPlayer _Player, CGhost[] _Ghosts) {
 		foreach (Ghost in _Ghosts) {
 			Net_Race_Checkpoint_GhostsTimes.add(Utils::ToScriptArray(Ghost.Result.Checkpoints));
 		}
+	}
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+/// The best ghost respawns number used to compute the player's rank in platform maps
+Void SetBestGhostRespawnsNbForRanking(CPlayer _Player, Integer _BestRespawnsNb) {
+	declare CUIConfig UI <=> UIManager.GetUI(_Player);
+	if (UI != Null) {
+		declare netwrite Integer Net_Race_Checkpoint_BestGhostRespawnsNb for UI = -1;
+		Net_Race_Checkpoint_BestGhostRespawnsNb = _BestRespawnsNb;
 	}
 }
 
@@ -164,6 +184,8 @@ Void InitializePlayer(CPlayer _Player) {
 	if (_Player == Null) return;
 
 	SetVisibility(_Player, False);
+	SetGhostsForRanking(_Player, []);
+	SetBestGhostRespawnsNbForRanking(_Player, -1);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -179,6 +201,7 @@ Void Unload() {
 	SetVisibleFor(C_Target_Everyone);
 	SetAutoUISequenceFinish(False);
 	SetUseWaypointEvent(False);
+	SetDisplayRespawnsInsteadOfTime(False);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //

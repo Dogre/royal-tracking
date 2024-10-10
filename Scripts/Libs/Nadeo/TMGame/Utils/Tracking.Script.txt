@@ -1,18 +1,18 @@
 /**
  *	Tracking management
  */
-#Const Version		"1.2.0"
+#Const Version		"1.6.0"
 #Const ScriptName	"Libs/Nadeo/TMGame/Utils/Tracking.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "Libs/Nadeo/CMGame/Utils/MainUser.Script.txt" as MainUser
 #Include "Libs/Nadeo/CMGame/Utils/Http.Script.txt" as Http
 #Include "Libs/Nadeo/TMGame/API/CampaignAPI.Script.txt" as CampaignAPI
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Structure
+// MARK: Structure
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Struct K_GameModeNCS {
 	Text Name;
@@ -61,7 +61,7 @@
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constant
+// MARK: Constant
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const C_Context_Null 0
 #Const C_Context_Menu 1
@@ -69,13 +69,19 @@
 #Const C_Context_TrackEditor 3
 
 #Const C_GameMode_Null ""
+// Validation
+#Const C_GameMode_PlatformValidation "PlatformValidation"
+#Const C_GameMode_RaceValidation "RaceValidation"
+#Const C_GameMode_RoyalValidation "RoyalValidation"
+#Const C_GameMode_StuntValidation "StuntValidation"
 // Local
 #Const C_GameMode_Campaign "Campaign"
 #Const C_GameMode_HotSeat "HotSeat"
+#Const C_GameMode_Platform "Platform"
 #Const C_GameMode_PlayMap "PlayMap"
 #Const C_GameMode_RaceTest "RaceTest"
-#Const C_GameMode_RaceValidation "RaceValidation"
-#Const C_GameMode_RoyalValidation "RoyalValidation"
+#Const C_GameMode_RoyalTimeAttackSolo "RoyalTimeAttackSolo"
+#Const C_GameMode_StuntSolo "StuntSolo"
 // Online
 #Const C_GameMode_Champion "Champion"
 #Const C_GameMode_ChampionCup "ChampionCup"
@@ -95,6 +101,7 @@
 #Const C_GameMode_RoundsBoulet "RoundsBoulet"
 #Const C_GameMode_Royal "Royal"
 #Const C_GameMode_RoyalTimeAttack "RoyalTimeAttack"
+#Const C_GameMode_StuntMulti "StuntMulti"
 #Const C_GameMode_Teams "Teams"
 #Const C_GameMode_TeamsMatchmaking "TeamsMatchmaking"
 #Const C_GameMode_TimeAttack "TimeAttack"
@@ -157,7 +164,7 @@
 #Const C_Page_NullId ""
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /// Track news impression

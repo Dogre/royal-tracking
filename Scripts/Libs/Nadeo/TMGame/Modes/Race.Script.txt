@@ -5,7 +5,7 @@
 #Const ScriptName	"Libs/Nadeo/TMGame/Modes/Race.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "MathLib" as ML
 #Include "ColorLib" as CL
@@ -24,7 +24,7 @@
 #Include "Libs/Nadeo/TMGame/Utils/Tracking.Script.txt" as Tracking
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Structures
+// MARK: Structures
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Struct K_GhostConfig {
 	Text ScopeSeason;
@@ -54,7 +54,7 @@
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constants
+// MARK: Constants
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const C_SpawnDuration 1500
 #Const C_OutroDuration 8000
@@ -92,7 +92,7 @@
 #Const C_EnableAutomaticGiveUpAfterElimination False
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Globales
+// MARK: Globales
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 declare Events::K_RaceEvent[] G_PendingEvents; //< Pending events filtered for the race mode
 declare Integer G_RespawnBehaviour; //< What happens when a player respawn
@@ -120,7 +120,7 @@ declare Boolean G_JoinLeaveNotificationForFakeUserEnabled; //< Enable or disable
 declare Boolean G_AutomaticGiveUpAfterElimination; //< Automatically unspawn the player's car when they are eliminated by an obstacle
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /** Get the content of the pending events array

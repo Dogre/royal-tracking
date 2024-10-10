@@ -5,7 +5,7 @@
 #Const ScriptName	"Libs/Nadeo/Trackmania/Modes/Royal/UIModules/WaitingScreen_Client.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "Libs/Nadeo/CMGame/Utils/ManiaView2.Script.txt" as MV
 #Include "Libs/Nadeo/CMGame/Utils/Icons.Script.txt" as Icons
@@ -27,7 +27,7 @@
 #Include "Libs/Nadeo/CMGame/Utils/Platform.Script.txt" as Platform
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constants
+// MARK: Constants
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const C_HideBackground True
 #Const C_ImgPath "file://Media/Manialinks/Nadeo/Trackmania/Modes/Royal"
@@ -47,10 +47,10 @@
 #Const C_Text_AuthorName _("|NameOnTheRight|By %1")
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Public
+// MARK: Public
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /// Get the id of the UI module

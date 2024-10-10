@@ -5,7 +5,7 @@
 #Const ScriptName	"Libs/Nadeo/Trackmania/Structures/PrestigeStruct.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "TextLib" as TL
 #Include "MathLib" as ML
@@ -14,7 +14,7 @@
 #Include "Libs/Nadeo/CMGame/Utils/Tools.Script.txt" as Tools
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constants
+// MARK: Constants
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const C_ComponentName "lib-prestige-struct"
 #Const P "LibPrestigeStruct_"
@@ -113,7 +113,7 @@
 ]
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Structures
+// MARK: Structures
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Struct K_Prestige {
 	Text CategoryType;
@@ -134,7 +134,7 @@
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 CUserV2Manager::EPrestigeMode ConvertPrestigeMode(NWebServicesPrestige::EPrestigeMode _Mode) {
 	switch (_Mode) {

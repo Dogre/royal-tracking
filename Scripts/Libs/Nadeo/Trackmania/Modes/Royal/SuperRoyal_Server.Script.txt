@@ -5,7 +5,7 @@
 #Const ScriptName "Libs/Nadeo/Trackmania/Modes/Royal/SuperRoyal_Server.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constants
+// MARK: Constants
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const C_Division_Bronze "Bronze"
 #Const C_Division_Silver "Silver"
@@ -13,10 +13,10 @@
 #Const C_Division_Master "Master"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Public
+// MARK: Public
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //

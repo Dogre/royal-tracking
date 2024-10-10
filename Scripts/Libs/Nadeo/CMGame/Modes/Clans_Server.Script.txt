@@ -1,29 +1,30 @@
 /**
  *	Clans management (server side)
  */
-#Const Version		"1.2.0"
+#Const Version		"1.3.0"
 #Const ScriptName	"Libs/Nadeo/CMGame/Modes/Clans_Server.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Libraries
+// MARK: Libraries
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Include "MathLib" as ML
 #Include "Libs/Nadeo/CMGame/Modes/Clans_Common.Script.txt" as Clans
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Constantes
+// MARK: Constantes
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 #Const C_MultiClansMax 30 //< Maximum number of clans supported by the C++
 
 #Const Clans::C_ClanStyle_Default as C_ClanStyle_Default
 #Const Clans::C_ClanStyle_Animals as C_ClanStyle_Animals
 #Const Clans::C_ClanStyle_Fruits as C_ClanStyle_Fruits
+#Const Clans::C_ClanStyles as C_ClanStyles
 
 #Const Clans::C_Teams_Animals as C_Teams_Animals
 #Const Clans::C_Teams_Fruits as C_Teams_Fruits
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Globales
+// MARK: Globales
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 declare Integer G_ClansNb;
 declare Integer G_ClanStyle;
@@ -31,7 +32,7 @@ declare Ident[Integer] G_LoadedSkins;
 declare Boolean G_ClanSkinsEnabled;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-// Functions
+// MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 /// Turn on/off clans
@@ -40,7 +41,11 @@ Void SetUseClans(Boolean _UseClans) {
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-/// Turn on/off multiclans
+/** Turn on/off multiclans
+ *	`UseMultiClans` used to be the only way to have more than 2 teams in a game mode
+ *	But nowadays `UseClans` already creates 20 teams so `UseMultiClans` is not useful in this case anymore
+ *	The only benefit of `UseMultiClans` is that it enables the 20 teams but ignore their C++ style (color, logo, ...)
+ */
 Void SetUseMultiClans(Boolean _UseMultiClans) {
 	UseMultiClans = _UseMultiClans;
 	declare netwrite Boolean Net_CMGame_Clans_UseMultiClans for Teams[0] = False;
@@ -62,16 +67,12 @@ Void SetClansNb(Integer _ClansNb) {
 	declare netwrite Integer Net_CMGame_Clans_ClansNb for Teams[0] = 0;
 	Net_CMGame_Clans_ClansNb = G_ClansNb;
 
-	if (G_ClansNb > 2) {
-		SetUseClans(False);
-		SetUseMultiClans(True);
-	} else if (G_ClansNb == 2) {
+	if (G_ClansNb > 1) {
 		SetUseClans(True);
-		SetUseMultiClans(False);
 	} else {
 		SetUseClans(False);
-		SetUseMultiClans(False);
 	}
+	SetUseMultiClans(False);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -90,13 +91,20 @@ Boolean ClansAreEnabled() {
 /// Select a clan style
 Void SetClanStyle(Integer _ClanStyle) {
 	assert(
-		_ClanStyle == C_ClanStyle_Default || _ClanStyle == C_ClanStyle_Animals || _ClanStyle == C_ClanStyle_Fruits,
+		_ClanStyle == C_ClanStyle_Default || C_ClanStyles.exists(_ClanStyle),
 		"Unknown clan style"
 	);
 
 	G_ClanStyle = _ClanStyle;
 	declare netwrite Integer Net_CMGame_Clans_ClanStyle for Teams[0] = Clans::C_ClanStyle_Default;
 	Net_CMGame_Clans_ClanStyle = G_ClanStyle;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+/// Select a random clan style
+Void SetRandomClanStyle() {
+	declare Integer RandomIndex = ML::Rand(0, C_ClanStyles.count-1);
+	SetClanStyle(C_ClanStyles[RandomIndex]);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -149,7 +157,7 @@ Ident GetClanModelId(Integer _Clan) {
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-///	Get the color of the given clan
+/// Get the color of the given clan
 Vec3 GetClanColor(Integer _Clan) {
 	return Clans::GetClanColor(G_ClanStyle, _Clan);
 }
@@ -161,7 +169,7 @@ Vec3 GetClanForegroundColor(Integer _Clan) {
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-///	Get the name of the given clan
+/// Get the name of the given clan
 Text GetClanName(Integer _Clan, Boolean _UseColor) {
 	return Clans::GetClanName(G_ClanStyle, _Clan, _UseColor);
 }
@@ -170,7 +178,7 @@ Text GetClanName(Integer _Clan) {
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-///	Get the logo of the given clan
+/// Get the logo of the given clan
 Text GetClanLogo(Integer _Clan) {
 	return Clans::GetClanLogo(G_ClanStyle, _Clan);
 }
@@ -179,6 +187,30 @@ Text GetClanLogo(Integer _Clan) {
 /// Get the skin of the given clan
 Text GetClanSkin(Integer _Clan) {
 	return Clans::GetClanSkin(G_ClanStyle, _Clan);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+/// Get the trigram of the given clan
+Text GetClanTrigram(Integer _Clan) {
+	return Clans::GetClanTrigram(G_ClanStyle, _Clan);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+/// Get the trigram color of the given clan
+Vec3 GetClanTrigramColor(Integer _Clan) {
+	return Clans::GetClanTrigramColor(G_ClanStyle, _Clan);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+/// Get the ids of the similar teams in color of the given clan
+Integer[] GetClanSimilarTeamsInColor(Integer _Clan) {
+	return Clans::GetClanSimilarTeamsInColor(G_ClanStyle, _Clan);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+/// Get a list of distinct teams (in color)
+Integer[] GetRandomDistinctTeams(Integer _ClansNb) {
+	return Clans::GetRandomDistinctTeams(G_ClanStyle, _ClansNb);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
