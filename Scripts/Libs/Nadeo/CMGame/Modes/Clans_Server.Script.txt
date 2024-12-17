@@ -1,7 +1,7 @@
 /**
  *	Clans management (server side)
  */
-#Const Version		"1.3.0"
+#Const Version		"1.4.0"
 #Const ScriptName	"Libs/Nadeo/CMGame/Modes/Clans_Server.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -18,10 +18,12 @@
 #Const Clans::C_ClanStyle_Default as C_ClanStyle_Default
 #Const Clans::C_ClanStyle_Animals as C_ClanStyle_Animals
 #Const Clans::C_ClanStyle_Fruits as C_ClanStyle_Fruits
+#Const Clans::C_ClanStyle_Sports as C_ClanStyle_Sports
 #Const Clans::C_ClanStyles as C_ClanStyles
 
 #Const Clans::C_Teams_Animals as C_Teams_Animals
 #Const Clans::C_Teams_Fruits as C_Teams_Fruits
+#Const Clans::C_Teams_Sports as C_Teams_Sports
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // MARK: Globales
@@ -120,6 +122,7 @@ Void LoadClanStyleSkins() {
 	switch (G_ClanStyle) {
 		case C_ClanStyle_Animals: StyledTeams = C_Teams_Animals;
 		case C_ClanStyle_Fruits: StyledTeams = C_Teams_Fruits;
+		case C_ClanStyle_Sports: StyledTeams = C_Teams_Sports;
 	}
 
 	G_LoadedSkins = [];

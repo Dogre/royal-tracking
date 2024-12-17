@@ -2,7 +2,7 @@
  *	Scores library
  *	Manage players and teams scores
  */
-#Const	Version			"1.0.0"
+#Const	Version			"1.1.0"
 #Const	ScriptName	"Libs/Nadeo/TMGame/Modes/Scores.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -160,6 +160,23 @@ Integer[][] SortKeysByPoints(Integer[Integer] _KeysPoints, Integer _SortDirectio
 }
 Ident[][] SortIdsByPoints(Integer[Ident] _KeysPoints, Integer _SortDirection, Integer _NotRankedPoints) {
 	return ScoresSort::SortIdsByPoints(_KeysPoints, _SortDirection, _NotRankedPoints);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+/**	Sort keys by name
+ *
+ *	@param	_KeyNames									The name of each key
+ *	@param	_SortDirection						In which direction the names must be sorted (high to low or low to high)
+ *	@param	_NotRankedName						The value that must be considered as "no name", key will be sorted last
+ *
+ *	@return														Return an array with the following format :
+ *																		[[KeyA, KeyB], [KeyC], [KeyD, KeyE, KeyF]]
+ */
+Integer[][] SortKeysByName(Text[Integer] _KeyNames, Integer _SortDirection, Text _NotRankedName) {
+	return ScoresSort::SortKeysByName(_KeyNames, _SortDirection, _NotRankedName);
+}
+Ident[][] SortIdsByName(Text[Ident] _KeyNames, Integer _SortDirection, Text _NotRankedName) {
+	return ScoresSort::SortIdsByName(_KeyNames, _SortDirection, _NotRankedName);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //

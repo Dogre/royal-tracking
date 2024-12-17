@@ -1,7 +1,7 @@
 /**
  *	Clans management common
  */
-#Const Version		"2.2.0"
+#Const Version		"2.3.1"
 #Const ScriptName	"Libs/Nadeo/CMGame/Modes/Clans_Common.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -36,7 +36,8 @@
 #Const C_ClanStyle_Default 0
 #Const C_ClanStyle_Animals 1
 #Const C_ClanStyle_Fruits 2
-#Const C_ClanStyles [1, 2]
+#Const C_ClanStyle_Sports 3
+#Const C_ClanStyles [1, 2, 3]
 
 /**
  * Constant used in `Royal` and `RoyalStars` game modes.
@@ -496,6 +497,235 @@
 	}
 ]
 
+/**
+ * Constant used in `Royal` and `RoyalStars` game modes.
+ * The `SkinOptions` member must be set to "Prestige=Yes&Mode=Royal&Year=XXXX", while the `Skin` member must remain empty.
+ * This configuration allows the C++ code to dynamically update the skin.
+ * @see /trackmania-next/tmnext/-/issues/4828
+ */
+#Const C_Teams_Sports [
+	1 => K_Team {
+		Name = _("|Clan|American Football"),
+		Color = <0.33, 0.23, 0.15>,
+		ForegroundColor = <1., 1., 1.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/AmericanFootball.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "AFO" corresponds to the 3 first letters of "American Football". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|American Football|AFO"),
+		SimilarTeamsInColor= []
+	},
+	2 => K_Team {
+		Name = _("|Clan|Archery"),
+		Color = <1., 0.79, 0.14>,
+		ForegroundColor = <0., 0., 0.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Archery.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "ARC" corresponds to the 3 first letters of "Archery". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Archery|ARC"),
+		SimilarTeamsInColor= [19]
+	},
+	3 => K_Team {
+		Name = _("|Clan|Badminton"),
+		Color = <0., 0.65, 1.>,
+		ForegroundColor = <0., 0., 0.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Badminton.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "BAD" corresponds to the 3 first letters of "Badminton". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Badminton|BAD"),
+		SimilarTeamsInColor= [11, 17]
+	},
+	4 => K_Team {
+		Name = _("|Clan|Baseball"),
+		Color = <0.69, 0.56, 0.45>,
+		ForegroundColor = <1., 1., 1.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Baseball.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "BAS" corresponds to the 3 first letters of "Baseball". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Baseball|BAS"),
+		SimilarTeamsInColor= [6, 20]
+	},
+	5 => K_Team {
+		Name = _("|Clan|Basketball"),
+		Color = <0.85, 0.36, 0.25>,
+		ForegroundColor = <1., 1., 1.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Basketball.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "BSK" corresponds to the 3 first letters of "Basketball". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Basketball|BSK"),
+		SimilarTeamsInColor= [7]
+	},
+	6 => K_Team {
+		Name = _("|Clan|Bowling"),
+		Color = <0.94, 0.72, 0.48>,
+		ForegroundColor = <0., 0., 0.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Bowling.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "BOW" corresponds to the 3 first letters of "Bowling". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Bowling|BOW"),
+		SimilarTeamsInColor= [4, 20]
+	},
+	7 => K_Team {
+		Name = _("|Clan|Boxing"),
+		Color = <0.89, 0.25, 0.22>,
+		ForegroundColor = <0., 0., 0.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Boxing.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "BOX" corresponds to the 3 first letters of "Boxing". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Boxing|BOX"),
+		SimilarTeamsInColor= [5]
+	},
+	8 => K_Team {
+		Name = _("|Clan|Fencing"),
+		Color = <0.63, 0.63, 0.63>,
+		ForegroundColor = <0., 0., 0.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Fencing.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "FEN" corresponds to the 3 first letters of "Fencing". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Fencing|FEN"),
+		SimilarTeamsInColor= [12, 16]
+	},
+	9 => K_Team {
+		Name = _("|Clan|Football"),
+		Color = <0.2, 0.78, 0.17>,
+		ForegroundColor = <0., 0., 0.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Football.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "FOO" corresponds to the 3 first letters of "Football". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Football|FOO"),
+		SimilarTeamsInColor= [13, 14]
+	},
+	10 => K_Team {
+		Name = _("|Clan|Golf"),
+		Color = <1., 0.34, 0.63>,
+		ForegroundColor = <0., 0., 0.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Golf.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "GOL" corresponds to the 3 first letters of "Golf". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Golf|GOL"),
+		SimilarTeamsInColor= []
+	},
+	11 => K_Team {
+		Name = _("|Clan|Hockey"),
+		Color = <0.25, 0.96, 1.>,
+		ForegroundColor = <0., 0., 0.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Hockey.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "HOC" corresponds to the 3 first letters of "Hockey". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Hockey|HOC"),
+		SimilarTeamsInColor= [3, 17]
+	},
+	12 => K_Team {
+		Name = _("|Clan|Ice Skating"),
+		Color = <0.83, 0.98, 1.>,
+		ForegroundColor = <0., 0., 0.>,
+		TrigramColor = <0., 0., 0.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/IceSkating.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "ICE" corresponds to the 3 first letters of "Ice Skating". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Ice Skating|ICE"),
+		SimilarTeamsInColor= [8, 16]
+	},
+	13 => K_Team {
+		Name = _("|Clan|Pool"),
+		Color = <0.09, 0.34, 0.08>,
+		ForegroundColor = <1., 1., 1.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Pool.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "POL" corresponds to the 3 first letters of "Pool". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Pool|POL"),
+		SimilarTeamsInColor= [9, 14]
+	},
+	14 => K_Team {
+		Name = _("|Clan|Rugby"),
+		Color = <0.16, 0.50, 0.14>,
+		ForegroundColor = <1., 1., 1.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Rugby.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "RUG" corresponds to the 3 first letters of "Rugby". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Rugby|RUG"),
+		SimilarTeamsInColor= [9, 13]
+	},
+	15 => K_Team {
+		Name = _("|Clan|Skateboard"),
+		Color = <0.6, 0.3, 0.94>,
+		ForegroundColor = <1., 1., 1.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Skateboard.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "SKA" corresponds to the 3 first letters of "Skateboard". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Skateboard|SKA"),
+		SimilarTeamsInColor= []
+	},
+	16 => K_Team {
+		Name = _("|Clan|Ski"),
+		Color = <0.98, 0.98, 0.98>,
+		ForegroundColor = <0., 0., 0.>,
+		TrigramColor = <0., 0., 0.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Ski.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "SKI" corresponds to the 3 first letters of "Ski". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Ski|SKI"),
+		SimilarTeamsInColor= [8, 12]
+	},
+	17 => K_Team {
+		Name = _("|Clan|Surf"),
+		Color = <0., 0.31, 1.>,
+		ForegroundColor = <1., 1., 1.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Surf.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "SUR" corresponds to the 3 first letters of "Surf". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Surf|SUR"),
+		SimilarTeamsInColor= [3, 11]
+	},
+	18 => K_Team {
+		Name = _("|Clan|Table Tennis"),
+		Color = <1., 0.54, 0.16>,
+		ForegroundColor = <0., 0., 0.>,
+		TrigramColor = <1., 1., 1.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/TableTennis.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "TAB" corresponds to the 3 first letters of "Table Tennis". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Table Tennis|TAB"),
+		SimilarTeamsInColor= []
+	},
+	19 => K_Team {
+		Name = _("|Clan|Tennis"),
+		Color = <0.96, 1., 0.>,
+		ForegroundColor = <0., 0., 0.>,
+		TrigramColor = <0., 0., 0.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Tennis.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "TEN" corresponds to the 3 first letters of "Tennis". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Tennis|TEN"),
+		SimilarTeamsInColor= [2]
+	},
+	20 => K_Team {
+		Name = _("|Clan|Volleyball"),
+		Color = <1., 0.94, 0.72>,
+		ForegroundColor = <0., 0., 0.>,
+		TrigramColor = <0., 0., 0.>,
+		Logo = "file://Media/Manialinks/Nadeo/CMGame/Modes/Clans/Sports/Volleyball.dds",
+		SkinOptions = "Prestige=Yes&Mode=Royal&Year=2025",
+		//L16N "VOL" corresponds to the 3 first letters of "Volleyball". The translation must be 3 or less letters because it's displayed on the back of the car (as the trigram). Due to technical limitations, you can only use A-Z letters. If you cannot translate in your language, just keep the english translation.
+		Trigram = _("|Volleyball|VOL"),
+		SimilarTeamsInColor= [4, 6]
+	}
+]
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 // MARK: Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -505,6 +735,7 @@ K_Team[Integer] GetTeamsFromClanStyle(Integer _ClanStyle) {
 	switch (_ClanStyle) {
 		case C_ClanStyle_Animals: return C_Teams_Animals;
 		case C_ClanStyle_Fruits: return C_Teams_Fruits;
+		case C_ClanStyle_Sports: return C_Teams_Sports;
 	}
 	return [];
 }

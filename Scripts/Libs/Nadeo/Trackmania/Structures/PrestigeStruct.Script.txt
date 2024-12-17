@@ -1,7 +1,7 @@
 /**
  *	Structures for Prestige
  */
-#Const Version		"2.2.0"
+#Const Version		"2.3.0"
 #Const ScriptName	"Libs/Nadeo/Trackmania/Structures/PrestigeStruct.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -109,6 +109,28 @@
 		"Team18" => _("|Clan|Pineapple"),
 		"Team19" => _("|Clan|Strawberry"),
 		"Team20" => _("|Clan|Watermelon")
+	],
+	2025 => [
+		"Team01" => _("|Clan|American Football"),
+		"Team02" => _("|Clan|Archery"),
+		"Team03" => _("|Clan|Badminton"),
+		"Team04" => _("|Clan|Baseball"),
+		"Team05" => _("|Clan|Basketball"),
+		"Team06" => _("|Clan|Bowling"),
+		"Team07" => _("|Clan|Boxing"),
+		"Team08" => _("|Clan|Fencing"),
+		"Team09" => _("|Clan|Football"),
+		"Team10" => _("|Clan|Golf"),
+		"Team11" => _("|Clan|Hockey"),
+		"Team12" => _("|Clan|Ice Skating"),
+		"Team13" => _("|Clan|Pool"),
+		"Team14" => _("|Clan|Rugby"),
+		"Team15" => _("|Clan|Skateboard"),
+		"Team16" => _("|Clan|Ski"),
+		"Team17" => _("|Clan|Surf"),
+		"Team18" => _("|Clan|Table Tennis"),
+		"Team19" => _("|Clan|Tennis"),
+		"Team20" => _("|Clan|Volleyball")
 	]
 ]
 
@@ -219,6 +241,7 @@ Integer GetClanStyleFromYear(Integer _Year) {
 	switch (_Year) {
 		case C_FirstPrestigeYear: return Clans::C_ClanStyle_Animals;
 		case 2024: return Clans::C_ClanStyle_Fruits;
+		case 2025: return Clans::C_ClanStyle_Sports;
 	}
 
 	return Clans::C_ClanStyle_Default;

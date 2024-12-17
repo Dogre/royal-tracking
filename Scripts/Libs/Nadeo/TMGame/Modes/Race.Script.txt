@@ -1,7 +1,7 @@
 /**
  *	API for the Race mode
  */
-#Const Version		"1.0.2"
+#Const Version		"1.1.0"
 #Const ScriptName	"Libs/Nadeo/TMGame/Modes/Race.Script.txt"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -11,7 +11,8 @@
 #Include "ColorLib" as CL
 #Include "Libs/Nadeo/CMGame/Modes/Legacy/Ladder.Script.txt" as Ladder
 #Include "Libs/Nadeo/CMGame/Modes/Clans_Server.Script.txt" as Clans
-#Include "Libs/Nadeo/CMGame/Modes/Utils.Script.txt" as Utils
+#Include "Libs/Nadeo/CMGame/Modes/Utils.Script.txt" as ModeUtils
+#Include "Libs/Nadeo/CMGame/Utils/Utils.Script.txt" as CommonUtils
 #Include "Libs/Nadeo/TMGame/Modes/Base/UIModules/Checkpoint_Server.Script.txt" as UIModules_Checkpoint
 #Include "Libs/Nadeo/TMGame/Modes/Base/UIModules/DisplayMessage_Server.Script.txt" as UIModules_DisplayMessage
 #Include "Libs/Nadeo/TMGame/Modes/Base/UIModules/Helpers_Server.Script.txt" as UIModules_Helpers
@@ -1321,7 +1322,7 @@ Void SortScores(Integer _SortOrder) {
 		}
 	}
 
-	declare ScoresTables = Utils::GetScoresTables();
+	declare ScoresTables = ModeUtils::GetScoresTables();
 	foreach (ScoresTable in ScoresTables) {
 		ScoresTable.Scores_Sort(ScoresTableSortOrder);
 	}
@@ -1334,6 +1335,53 @@ Void SortScores(Integer _SortOrder) {
  */
 Integer GetScoresSortOrder() {
 	return G_ScoresSortOrder;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+/// Get the previous race ranking sorted by race times then previous checkpoint times then match points then name
+CSmScore[] GetPrevRaceRanking() {
+	declare Integer[][Ident] ScoreIdsToSortByWaypointTimes;
+	foreach (Score in Scores) {
+		ScoreIdsToSortByWaypointTimes[Score.Id] = CommonUtils::ToScriptArray(Score.PrevRaceTimes);
+	}
+
+	declare Ident[][Integer] ScoreIdsSortedByWaypointTimes = Scores::SortIdsByWaypointTimes(ScoreIdsToSortByWaypointTimes);
+	declare CSmScore[] SortedScores;
+	foreach (WaypointTimesScoreIds in ScoreIdsSortedByWaypointTimes) {
+		declare Ident[][] ScoreIdsSortedByPoints;
+		if (WaypointTimesScoreIds.count <= 1) {
+			ScoreIdsSortedByPoints = [WaypointTimesScoreIds];
+		} else {
+			declare Integer[Ident] ScoreIdsToSortByPoints;
+			foreach (ScoreId in WaypointTimesScoreIds) {
+				ScoreIdsToSortByPoints[ScoreId] = Scores::GetPlayerMatchPoints(Scores[ScoreId]);
+			}
+			ScoreIdsSortedByPoints = Scores::SortIdsByPoints(ScoreIdsToSortByPoints, Scores::C_Order_Descending, 0);
+		}
+		foreach (PointsScoreIds in ScoreIdsSortedByPoints) {
+			declare Ident[][] ScoreIdsSortedByName;
+			if (PointsScoreIds.count <= 1) {
+				ScoreIdsSortedByName = [PointsScoreIds];
+			} else {
+				declare Text[Ident] ScoreIdsToSortByName;
+				foreach (ScoreId in PointsScoreIds) {
+					if (Scores[ScoreId].User == Null) {
+						ScoreIdsToSortByName[ScoreId] = "";
+					} else {
+						ScoreIdsToSortByName[ScoreId] = Scores[ScoreId].User.Name;
+					}
+				}
+				ScoreIdsSortedByName = Scores::SortIdsByName(ScoreIdsToSortByName, Scores::C_Order_Ascending, "");
+			}
+			foreach (NameScoreIds in ScoreIdsSortedByName) {
+				foreach (ScoreId in NameScoreIds) {
+					SortedScores.add(Scores[ScoreId]);
+				}
+			}
+		}
+	}
+
+	return SortedScores;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
